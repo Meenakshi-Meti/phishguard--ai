@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import EmailScanner from "./components/EmailScanner";
 import Features from "./components/Features";
 import Scanner from "./components/Scanner";
+import AuthLayout from "./components/AuthLayout";
 import "./App.css";
 
 function App() {

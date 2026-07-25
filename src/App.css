@@ -275,11 +275,10 @@ box-shadow:
     background:transparent;
 }
 
-<<<<<<< HEAD
 footer{
     background:transparent;
 }
-=======
+
 .email-analyzer textarea {
   width: 100%;
   padding: 15px;
@@ -597,4 +596,4 @@ border-radius:12px;
 transition:.4s;
 
 }
->>>>>>> 6096d83a230e5ebadd7c9f83240185df9570ac13
+
