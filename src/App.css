@@ -238,7 +238,7 @@ padding:15px 30px;
 
 border-radius:12px;
 
-color:white;
+color:rgb(112, 68, 231);
 
 transition:.3s;
 
@@ -274,7 +274,6 @@ box-shadow:
 .scanner{
     background:transparent;
 }
-
 footer{
     background:transparent;
 }
@@ -463,7 +462,7 @@ footer{
     @media (max-width: 1200px){.hero,.dashboard,.mail-console,.stack-grid{grid-template-columns:1fr}.hero-stage{order:-1;min-height:560px}.sidebar .panel{position:relative;top:0}}
     @media (max-width: 760px){.content{padding:var(--space-3)}.topbar{grid-template-columns:1fr auto;grid-template-areas:'brand toggle' 'nav nav'}.brand{grid-area:brand}.topnav{grid-area:nav;justify-content:flex-start;overflow:auto;padding-bottom:.25rem}.theme-toggle{grid-area:toggle;justify-self:end}.hero{min-height:auto;padding-top:var(--space-10)}.hero-metrics,.detail-grid,.alert-factors,.timeline{grid-template-columns:1fr}.status-bar{left:4%;right:4%;bottom:2%;padding:var(--space-3);flex-direction:column}.floating-card{width:min(100%,280px)}.card-a{left:0}.card-c{right:0}.mail-item{grid-template-columns:auto 1fr}.mail-item>.risk-chip{grid-column:1/-1;justify-self:start}.factor{grid-template-columns:1fr}.factor-track{order:3}}
     @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}[data-reveal]{opacity:1;transform:none}}
-  </style>
+
 body{
 
 background:
@@ -558,8 +557,9 @@ background:linear-gradient(
 );
 
 background-size:300%;
-
 -webkit-background-clip:text;
+  -webkit-background-clip: text;
+  background-clip: text;
 
 color:transparent;
 
@@ -595,5 +595,23 @@ border-radius:12px;
 
 transition:.4s;
 
+}
+.cyber-globe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+    pointer-events:none;
+}
+
+.cards-wrapper{
+    position:relative;
+    z-index:5;
+}
+
+.overview-header{
+    position:relative;
+    z-index:5;
 }
 

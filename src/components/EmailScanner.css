@@ -32,7 +32,6 @@
   font-size: 3rem;
   margin-bottom: 10px;
   background: linear-gradient(90deg,#00E5FF,#2563EB,#7C3AED);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

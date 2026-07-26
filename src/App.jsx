@@ -1,45 +1,15 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import EmailScanner from "./components/EmailScanner";
-import Features from "./components/Features";
-import Scanner from "./components/Scanner";
-import AuthLayout from "./components/AuthLayout";
+import Overview from "./components/Overview/Overview";
 import "./App.css";
 
 function App() {
   return (
-    <div className="app">
-
-      {/* Full Page Background */}
-      <div className="background">
-        <div className="grid"></div>
-
-        <div className="blob blob1"></div>
-        <div className="blob blob2"></div>
-        <div className="blob blob3"></div>
-
-        <div className="ring ring1"></div>
-        <div className="ring ring2"></div>
-        <div className="ring ring3"></div>
-
-        <div className="scan-line"></div>
-      </div>
-
-      {/* Everything else */}
-      <div className="content">
-        <Navbar />
-        <Hero />
-        <EmailScanner/>
-        <Features />
-        <Scanner />
-        <Footer />
-      </div>
-
-    </div>
+    <>
+      <Hero />
+      <Overview />
+    </>
   );
 }
-
-
 
 const emails = [
       {
@@ -460,11 +430,6 @@ const emails = [
       });
     }
 
-    initTheme();
-    initScroll();
-    initCanvas();
-    initActions();
-    renderList();
-    renderDetail();
+  
 
 export default App;
