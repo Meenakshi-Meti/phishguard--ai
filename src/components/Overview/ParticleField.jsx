@@ -29,7 +29,6 @@ export default function ParticleField({
 
     return array;
   }, [count, radius]);
-
   useFrame((state, delta) => {
     if (!pointsRef.current) return;
 
@@ -60,6 +59,7 @@ export default function ParticleField({
         depthWrite={false}
         blending={THREE.AdditiveBlending}
         sizeAttenuation
+        blending={THREE.AdditiveBlending}
       />
     </points>
   );
