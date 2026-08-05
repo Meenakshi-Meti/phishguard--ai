@@ -1,23 +1,19 @@
+import { useState } from "react";
+import BootSequence from "./BootSequence";
+
 function Hero() {
-  return (
-    <section className="hero">
 
-      
-      <div className="blob blob1"></div>
-      <div className="blob blob2"></div>
-      <div className="blob blob3"></div>
+    const [loaded, setLoaded] = useState(false);
 
-      {/* Hero Content */}
-      <div className="hero-content">
-        <h1>PhishGuard AI</h1>
-        <p>AI Powered Phishing Detection</p>
+    if(!loaded){
+        return <BootSequence onComplete={() => setLoaded(true)} />;
+    }
 
-        <button>Scan Now</button>
-      </div>
-      <div className="bg-slate-900/40 backdrop-blur-lg"></div>
-
-    </section>
-  );
+    return(
+        <div>
+            
+        </div>
+    )
 }
 
 export default Hero;
