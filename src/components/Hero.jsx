@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BootSequence from "./BootSequence";
+import Stats from "./Stats";
 
 function Hero() {
 
