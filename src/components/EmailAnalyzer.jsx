@@ -40,6 +40,50 @@ Microsoft Security Team`
 
   });
 
+  const [analysis] = useState({
+  riskScore: 92,
+
+  threatLevel: "HIGH",
+
+  confidence: 98,
+
+  verdict:
+    "This email is highly suspicious. The sender imitates Microsoft's branding, creates urgency, and redirects users to a fake login domain.",
+
+  indicators: [
+    "Suspicious sender domain",
+    "Urgent language",
+    "External login link",
+    "Brand impersonation",
+    "Account suspension threat",
+  ],
+
+  recommendations: [
+    "Do not click the link.",
+    "Block the sender.",
+    "Report the email as phishing.",
+    "Delete the email immediately.",
+  ],
+
+  similarEmails: [
+    {
+      id: 1,
+      subject: "Microsoft Password Reset",
+      score: "96%",
+    },
+    {
+      id: 2,
+      subject: "Office365 Login Verification",
+      score: "94%",
+    },
+    {
+      id: 3,
+      subject: "Outlook Security Alert",
+      score: "91%",
+    },
+  ],
+});
+
 
   return (
 
@@ -102,23 +146,104 @@ Microsoft Security Team`
         </div>
 
         <div className="email-right">
-          <div className="analysis-placeholder">
-            <div className="pulse-circle"></div>
-            <h2>
-              Waiting for Analysis
-            </h2>
+          <div className="email-right">
+  <div className="analysis-card">
+    <h3>Risk Score</h3>
+    <div className="risk-circle">
+      {analysis.riskScore}
+      <span>%</span>
+    </div>
 
-            <p>
-              Connect this component with the
-              Scanner module.
-              <br />
-              Once the user clicks Analyze,
-              the AI report will appear here.
-            </p>
+  </div>
 
+  <div className="analysis-card">
+    <h3>Threat Level</h3>
+    <div className="threat-badge">
+      {analysis.threatLevel}
+    </div>
+
+    <p>
+
+      Confidence
+
+      <strong>
+
+        {" "}
+
+        {analysis.confidence}%
+
+      </strong>
+
+    </p>
+
+  </div>
+
+  <div className="analysis-card">
+    <h3>AI Verdict</h3>
+    <p>
+      {analysis.verdict}
+    </p>
+  </div>
+
+  <div className="analysis-card">
+    <h3>Suspicious Indicators</h3>
+    <ul>
+      {analysis.indicators.map((item, index) => (
+        <li key={index}>
+          ⚠ {item}
+        </li>
+      ))}
+
+    </ul>
+
+  </div>
+
+
+  <div className="analysis-card">
+    <h3>Recommended Actions</h3>
+    <ul>
+      {analysis.recommendations.map((item, index) => (
+        <li key={index}>
+          ✅ {item}
+        </li>
+
+      ))}
+
+    </ul>
+
+  </div>
+  <div className="analysis-card">
+    <h3>Similar Fraud Emails</h3>
+    {
+      analysis.similarEmails.map((mail) => (
+        <div
+          className="similar-email"
+          key={mail.id}
+        >
+          <span>
+            {mail.subject}
+          </span>
+          <strong>
+            {mail.score}
+          </strong>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+  <div className="pulse-circle"></div>
+    <h2>
+     Waiting for Analysis
+      </h2>
+     <p> Connect this component with the
+        Scanner module.
+      <br />
+        Once the user clicks Analyze,
+        the AI report will appear here.
+      </p>
           </div>
         </div>
-      </div>
     </section>
   );
 
