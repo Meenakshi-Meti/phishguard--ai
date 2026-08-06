@@ -3,38 +3,31 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
   Sphere,
-  MeshDistortMaterial,
-  Float,
   Stars,
-  Ring
+  Float,
+  Ring,
 } from "@react-three/drei";
 
 function Earth() {
-  const earth = useRef();
+  const earthRef = useRef();
 
   useFrame(() => {
-    earth.current.rotation.y += 0.002;
-    earth.current.rotation.x += 0.0004;
+    if (earthRef.current) {
+      earthRef.current.rotation.y += 0.003;
+    }
   });
 
   return (
     <Float
       speed={2}
-      rotationIntensity={0.5}
-      floatIntensity={1.2}
+      rotationIntensity={0.4}
+      floatIntensity={0.8}
     >
-      <Sphere
-        ref={earth}
-        args={[2.2, 128, 128]}
-      >
-        <MeshDistortMaterial
+      <Sphere ref={earthRef} args={[2, 64, 64]}>
+        <meshStandardMaterial
           color="#00E5FF"
           emissive="#00E5FF"
-          emissiveIntensity={1.2}
-          distort={0.15}
-          speed={1.5}
-          roughness={0.15}
-          metalness={1}
+          emissiveIntensity={1}
           wireframe
         />
       </Sphere>
@@ -42,90 +35,79 @@ function Earth() {
   );
 }
 
-function Rings() {
+function OrbitRings() {
   return (
     <>
-      <Ring args={[2.6, 2.8, 64]}>
+      <Ring
+        args={[2.4, 2.5, 64]}
+        rotation={[Math.PI / 2, 0, 0]}
+      >
         <meshBasicMaterial
           color="#00E5FF"
           transparent
-          opacity={0.25}
-          side={2}
+          opacity={0.4}
         />
       </Ring>
 
       <Ring
-        rotation={[Math.PI / 2, 0, 0]}
-        args={[3, 3.15, 64]}
+        args={[2.8, 2.9, 64]}
+        rotation={[0, Math.PI / 2, 0]}
       >
         <meshBasicMaterial
           color="#7C3AED"
           transparent
-          opacity={0.18}
-          side={2}
-        />
-      </Ring>
-
-      <Ring
-        rotation={[0, Math.PI / 2, 0]}
-        args={[3.5, 3.65, 64]}
-      >
-        <meshBasicMaterial
-          color="#00E5FF"
-          transparent
-          opacity={0.15}
-          side={2}
+          opacity={0.25}
         />
       </Ring>
     </>
   );
 }
 
-export default function Globe() {
+function GlobeScene() {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "600px",
-      }}
-    >
+    <>
+      <ambientLight intensity={1.2} />
+
+      <pointLight
+        position={[5, 5, 5]}
+        intensity={3}
+        color="#00E5FF"
+      />
+
+      <Stars
+        radius={100}
+        depth={50}
+        count={3000}
+        factor={4}
+        fade
+      />
+
+      <Earth />
+
+      <OrbitRings />
+
+      <OrbitControls
+        enableZoom={false}
+        autoRotate
+        autoRotateSpeed={0.8}
+      />
+    </>
+  );
+}
+
+function Globe() {
+  return (
+    <div className="globe-wrapper">
       <Canvas
         camera={{
           position: [0, 0, 7],
           fov: 45,
         }}
       >
-        <ambientLight intensity={1.2} />
-
-        <directionalLight
-          position={[5, 5, 5]}
-          intensity={3}
-        />
-
-        <pointLight
-          position={[-5, -5, -5]}
-          intensity={2}
-          color="#00E5FF"
-        />
-
-        <Stars
-          radius={100}
-          depth={50}
-          count={5000}
-          factor={4}
-          fade
-        />
-
-        <Earth />
-
-        <Rings />
-
-        <OrbitControls
-          enableZoom={false}
-          autoRotate
-          autoRotateSpeed={0.6}
-        />
+        <GlobeScene />
       </Canvas>
     </div>
   );
 }
+
+export default Globe;

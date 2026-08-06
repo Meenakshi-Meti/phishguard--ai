@@ -1,39 +1,56 @@
-function Navbar(){
-    return(
-        <nav class="navbar">
-            <div className ="logo">
-                <h2>🛡️PhishGuardAI</h2>
-            </div>
-            <ul>
-                <li>Home</li>
-                <li>Features</li>
-                <li>Dashboard</li>
-                <li>Pricing</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
 
-            <div className="nav-button">
-            <button className="login-btn">Log In</button>
+import {
+  FaShieldAlt,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
-            <button className ="signup-btn">Sign Up</button>
-            
-            </div>
-            <nav
-  className="
-    fixed
-    top-0
-    left-0
-    w-full
-    bg-white/5
-    backdrop-blur-xl
-    border-b
-    border-white/10
-    z-50
-  "
-></nav>
-        </nav>
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    );
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <nav className={scrolled ? "navbar active" : "navbar"}>
+      <div className="logo">
+        <FaShieldAlt className="logo-icon" />
+        <span>PhishGuardAI</span>
+      </div>
+
+      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#scanner">Scanner</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <button className="scan-btn">
+        Scan Now
+      </button>
+
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+    </nav>
+  );
 }
+
 export default Navbar;
