@@ -39,7 +39,7 @@ function Navbar() {
       </ul>
 
       <button className="scan-btn">
-        Scan Now
+        Scan Nowza
       </button>
 
       <div
