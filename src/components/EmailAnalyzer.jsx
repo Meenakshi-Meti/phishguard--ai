@@ -5,8 +5,9 @@ import {
   FaEnvelope,
   FaUserShield,
   FaTriangleExclamation,
-  FaShieldAlt,
 } from "react-icons/fa6";
+
+import { FaShieldAlt } from "react-icons/fa";
 
 function EmailAnalyzer() {
   const [email] = useState({

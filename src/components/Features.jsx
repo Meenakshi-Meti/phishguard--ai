@@ -1,129 +1,135 @@
+import React from "react";
 import "./Features.css";
 
 import {
-  FaGlobe,
-  FaEnvelope,
-  FaFileShield,
-  FaQrcode,
+  FaShieldHalved,
   FaRobot,
+  FaGlobe,
   FaLink,
-  FaShieldAlt,
   FaChartLine,
-} from "react-icons/fa";
+  FaEnvelope,
+  FaBolt,
+  FaDatabase,
+} from "react-icons/fa6";
+
 
 function Features() {
 
   const features = [
     {
-      icon: <FaGlobe />,
-      title: "URL Threat Scanner",
+      icon: <FaShieldHalved />,
+      title: "AI Threat Detection",
       description:
-        "Analyze suspicious URLs and detect malicious domains, redirects, and phishing websites.",
-      tag: "WEB SECURITY",
+        "Advanced AI analyzes emails, URLs, and suspicious content to identify potential phishing attacks.",
       color: "cyan",
     },
 
     {
-      icon: <FaEnvelope />,
-      title: "Email Intelligence",
+      icon: <FaRobot />,
+      title: "Intelligent Analysis",
       description:
-        "Inspect email content, sender identity, links, and social engineering patterns.",
-      tag: "EMAIL SECURITY",
+        "PhishGuard AI studies multiple signals and patterns instead of relying on a single detection rule.",
       color: "purple",
     },
 
     {
-      icon: <FaFileShield />,
-      title: "Malicious File Detection",
+      icon: <FaGlobe />,
+      title: "URL Protection",
       description:
-        "Identify suspicious attachments and potentially dangerous files before they are opened.",
-      tag: "FILE SECURITY",
-      color: "green",
-    },
-
-    {
-      icon: <FaQrcode />,
-      title: "QR Code Scanner",
-      description:
-        "Scan QR codes and identify hidden malicious URLs and suspicious redirects.",
-      tag: "QR SECURITY",
-      color: "pink",
-    },
-
-    {
-      icon: <FaRobot />,
-      title: "AI Threat Analysis",
-      description:
-        "Use intelligent analysis to understand why a message has been classified as suspicious.",
-      tag: "AI ENGINE",
+        "Analyze suspicious links and identify malicious domains, redirects, and fake login pages.",
       color: "blue",
     },
 
     {
-      icon: <FaLink />,
-      title: "Blockchain Verification",
+      icon: <FaEnvelope />,
+      title: "Email Security",
       description:
-        "Compare detected phishing signatures with a tamper-resistant threat intelligence ledger.",
-      tag: "BLOCKCHAIN",
-      color: "orange",
-    },
-
-    {
-      icon: <FaShieldAlt />,
-      title: "Real-Time Protection",
-      description:
-        "Monitor incoming threats and provide instant alerts before users interact with them.",
-      tag: "PROTECTION",
-      color: "red",
+        "Inspect sender information, email content, suspicious language, and social engineering patterns.",
+      color: "green",
     },
 
     {
       icon: <FaChartLine />,
       title: "Threat Intelligence",
       description:
-        "Visualize threat activity, detection patterns, risk scores, and security trends.",
-      tag: "ANALYTICS",
-      color: "yellow",
+        "Visualize security activity through real-time threat statistics and intelligent security insights.",
+      color: "orange",
+    },
+
+    {
+      icon: <FaDatabase />,
+      title: "Threat Database",
+      description:
+        "Compare suspicious activity against known threat patterns and continuously improve detection.",
+      color: "red",
     },
   ];
 
+
   return (
-    <section className="features-section" id="features">
+    <section className="features" id="features">
+
+      {/* ==============================
+          SECTION HEADER
+      ============================== */}
+
       <div className="features-header">
+
         <span className="features-label">
-          <FaShieldAlt />
-          PHISHGUARD AI CAPABILITIES
+          <FaBolt />
+          POWERFUL SECURITY
         </span>
+
         <h2>
-          One Platform.
-          <br />
-          <span>Complete Threat Protection.</span>
+          Built to Detect.
+          <span> Designed to Protect.</span>
         </h2>
+
         <p>
-          PhishGuard AI combines artificial intelligence,
-          threat intelligence, and security analysis into
-          one unified protection system.
+          PhishGuard AI combines intelligent analysis,
+          threat intelligence, and real-time monitoring
+          to help identify phishing threats before they
+          become a problem.
         </p>
+
       </div>
 
+
+      {/* ==============================
+          FEATURES GRID
+      ============================== */}
+
       <div className="features-grid">
+
         {features.map((feature, index) => (
+
           <div
             className={`feature-card ${feature.color}`}
             key={index}
           >
-            <div className="feature-number">
-              0{index + 1}
-            </div>
+
+            {/* Card glow */}
+
+            <div className="feature-glow"></div>
+
+
+            {/* Icon */}
 
             <div className="feature-icon">
               {feature.icon}
             </div>
 
+
+            {/* Number */}
+
+            <span className="feature-number">
+              0{index + 1}
+            </span>
+
+
+            {/* Content */}
+
             <div className="feature-content">
-              <span className="feature-tag">
-                {feature.tag}
-              </span>
 
               <h3>
                 {feature.title}
@@ -134,27 +140,57 @@ function Features() {
               </p>
 
             </div>
-            <div className="feature-arrow">
-              →
+
+
+            {/* Bottom indicator */}
+
+            <div className="feature-line">
+              <span></span>
             </div>
+
           </div>
+
         ))}
 
       </div>
-      <div className="features-bottom">
-        <div className="live-indicator"></div>
-        <span>
-          PHISHGUARD AI ENGINE
-        </span>
-        <p>
-          Multiple security layers working together
-          to identify threats before they reach you.
-        </p>
+
+
+      {/* ==============================
+          BOTTOM SECURITY STRIP
+      ============================== */}
+
+      <div className="features-security">
+
+        <div className="security-icon">
+          <FaShieldHalved />
+        </div>
+
+        <div className="security-text">
+
+          <strong>
+            Multi-Layered AI Protection
+          </strong>
+
+          <span>
+            Every scan evaluates multiple security
+            signals before generating a threat score.
+          </span>
+
+        </div>
+
+        <div className="security-status">
+
+          <span className="security-dot"></span>
+
+          SYSTEM PROTECTED
+
+        </div>
 
       </div>
 
     </section>
   );
 }
+
 
 export default Features;

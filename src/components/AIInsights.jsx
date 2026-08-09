@@ -1,13 +1,14 @@
 import "./AIInsights.css";
 
 import {
-  FaRobot,
-  FaShieldAlt,
-  FaTriangleExclamation,
   FaGlobe,
   FaLink,
   FaCheckCircle,
 } from "react-icons/fa";
+
+import {
+  FaTriangleExclamation,
+} from "react-icons/fa6";
 
 function AIInsights() {
 
