@@ -41,7 +41,7 @@ It asks:
 
 ---
 
-# 🧠 The Core Idea
+#  The Core Idea
 
 PhishGuard AI analyzes a suspicious artifact through multiple signals:
 
@@ -181,7 +181,7 @@ One of the central concepts behind PhishGuard AI is the creation of a **multi-di
 
 Each artifact can generate several fingerprints:
 
-### 1. 📝 Text Hash
+### 1.  Text Hash
 
 Captures important characteristics of textual content.
 
@@ -199,7 +199,7 @@ This helps identify attacks that reuse similar language, messages, or social-eng
 
 ---
 
-### 2. 🌐 URL Hash
+### 2.  URL Hash
 
 The URL is analyzed and converted into a normalized fingerprint.
 
@@ -217,7 +217,7 @@ This provides a compact representation for identifying known or related maliciou
 
 ---
 
-### 3. 👁️ Visual Hash
+### 3.  Visual Hash
 
 Phishing websites often imitate legitimate services.
 
@@ -245,7 +245,7 @@ visual_hash
 
 ---
 
-### 4. 🏗️ Structural Hash
+### 4.  Structural Hash
 
 Two websites may look similar while using different URLs.
 
@@ -265,7 +265,7 @@ This captures structural characteristics of the webpage rather than relying only
 
 ---
 
-# 🔐 The Phish Signature
+#  The Phish Signature
 
 These signals are combined to create a stronger identity for the threat:
 
@@ -311,7 +311,7 @@ The important idea is that **one weak signal does not have to determine the enti
 
 ---
 
-# 🌎 Global Phish Signature Ledger
+#  Global Phish Signature Ledger
 
 PhishGuard AI introduces a shared threat-memory concept called the:
 
@@ -354,7 +354,7 @@ The goal is simple:
 
 ---
 
-# 🧩 Detection Architecture
+#  Detection Architecture
 
 ```mermaid
 flowchart LR
@@ -402,9 +402,9 @@ flowchart LR
 
 ---
 
-# 🛡️ Key Features
+#  Key Features
 
-## 🔗 Multi-Input Threat Detection
+##  Multi-Input Threat Detection
 
 PhishGuard AI is designed around multiple attack surfaces:
 
@@ -428,41 +428,41 @@ are considered together.
 
 ---
 
-## 🔐 Threat Fingerprinting
+##  Threat Fingerprinting
 
 Every analyzed threat can be represented using a unique multi-signal signature.
 
 ---
 
-## 🌎 Global Threat Memory
+##  Global Threat Memory
 
 The **Global Phish Signature Ledger** provides a mechanism for storing previously detected phishing signatures.
 
 ---
 
-## 🔍 Known Threat Recognition
+##  Known Threat Recognition
 
 If a new artifact matches an existing signature, the system can recognize it as a previously identified or related threat.
 
 ---
 
-## 📊 Explainable Threat Analysis
+##  Explainable Threat Analysis
 
 Instead of simply displaying:
 
-> ❌ PHISHING
+>  PHISHING
 
 the system can explain **why the artifact is suspicious** and which signals contributed to the decision.
 
 ---
 
-## ⚡ Real-Time Security Experience
+##  Real-Time Security Experience
 
 The frontend is designed around a security-dashboard experience where users can scan, analyze, and understand threats without needing cybersecurity expertise.
 
 ---
 
-# 🖥️ Product Experience
+#  Product Experience
 
 The interface is designed around a modern cybersecurity dashboard.
 
@@ -499,7 +499,7 @@ The interface is designed around a modern cybersecurity dashboard.
 
 ---
 
-# 🏗️ Technology Stack
+#  Technology Stack
 
 ### Frontend
 
@@ -620,7 +620,7 @@ npm start
 
 ---
 
-# 🔬 Example Detection Flow
+#  Example Detection Flow
 
 Imagine a user receives this email:
 
@@ -830,7 +830,7 @@ That shift transforms phishing detection from a **one-time decision** into a **c
 
 #  Where PhishGuard AI Can Be Used
 
-### 👤 Individual Users
+###  Individual Users
 
 Protect users from:
 
@@ -840,7 +840,7 @@ Protect users from:
 * Scam emails
 * QR-based phishing
 
-### 🏢 Organizations
+###  Organizations
 
 Potential applications include:
 
@@ -850,7 +850,7 @@ Potential applications include:
 * Threat intelligence
 * Incident investigation
 
-### 🌍 Security Ecosystems
+###  Security Ecosystems
 
 Potential integrations:
 
@@ -867,7 +867,7 @@ PhishGuard AI
 
 ---
 
-# 🏆 Project Vision
+#  Project Vision
 
 > **Build a security layer that doesn't forget.**
 
@@ -925,7 +925,7 @@ That's the direction PhishGuard AI is designed to explore.
 
 ---
 
-# 📌 Project Status
+#  Project Status
 
 🟢 **Active Prototype / Development**
 
@@ -933,7 +933,7 @@ PhishGuard AI is currently a prototype demonstrating the architecture and produc
 
 ---
 
-# ⭐ Support the Project
+#  Support the Project
 
 If you find the concept interesting:
 
@@ -945,7 +945,7 @@ If you find the concept interesting:
 
 ---
 
-## 🛡️ PhishGuard AI
+## PhishGuard AI
 
 ### **Detect the threat. Fingerprint the attack. Remember the signature. Protect the next user.**
 
