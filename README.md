@@ -503,16 +503,16 @@ The interface is designed around a modern cybersecurity dashboard.
 
 ### Frontend
 
-* ⚛️ React
-* ⚡ Vite
-* 🎨 CSS
-* 🧩 React Icons
-* 🌌 React Three Fiber / Three.js for immersive visual elements
+*  React
+*  Vite
+*  CSS
+*  React Icons
+*  React Three Fiber / Three.js for immersive visual elements
 
 ### Backend
 
-* 🟢 Node.js
-* 🚂 Express.js
+*  Node.js
+*  Express.js
 
 ### Database
 
@@ -520,12 +520,12 @@ The interface is designed around a modern cybersecurity dashboard.
 
 ### Intelligence & Security
 
-* 🧠 NLP / Text Analysis
-* 🔗 URL Analysis
-* 👁️ Perceptual Visual Hashing
-* 🏗️ DOM / Structural Fingerprinting
-* 🔐 Cryptographic Hashing
-* 🌎 Global Threat Signature Ledger
+*  NLP / Text Analysis
+*  URL Analysis
+*  Perceptual Visual Hashing
+*  DOM / Structural Fingerprinting
+*  Cryptographic Hashing
+*  Global Threat Signature Ledger
 
 ---
 
